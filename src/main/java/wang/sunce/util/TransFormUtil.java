@@ -13,8 +13,8 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TransForm {
-    private static Logger logger = LoggerFactory.getLogger(TransForm.class);
+public class TransFormUtil {
+    private static Logger logger = LoggerFactory.getLogger(TransFormUtil.class);
 
 
     public static void main(String[] args) {

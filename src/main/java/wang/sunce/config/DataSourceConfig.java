@@ -20,18 +20,12 @@ import javax.sql.DataSource;
 public class DataSourceConfig{
 
 
-    @Bean(name = "primaryDS") @Qualifier("primaryDS")
+    @Bean(name = "primaryDS")
+    @Qualifier("primaryDS")
     @Primary
     @ConfigurationProperties(prefix="spring.datasource")
     public DataSource primaryDataSource(){
-//        if("dev".equals(dataSource)){
             return DataSourceBuilder.create().build();
-//        }else{
-//            DataSourcePool dataSourcePool = new DataSourcePool();
-//            dataSourcePool.setDataSourceName(dataSource);
-//            return dataSourcePool;
-//        }
-
     }
 
 }

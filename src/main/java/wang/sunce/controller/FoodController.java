@@ -27,9 +27,9 @@ public class FoodController {
 
     @RequestMapping("/save")
     public @ResponseBody String save(String foodName){
-        Food food=new Food();
-        food.setName(foodName);
-        foodDao.save(food);
+//        Food food=new Food();
+//        food.setName(foodName);
+//        foodDao.save(food);
         List<Food> foods=foodDao.findAll();
         return  foods.toString();
     }
