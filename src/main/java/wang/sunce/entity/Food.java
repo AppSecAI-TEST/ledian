@@ -89,13 +89,7 @@ public class Food extends BaseEntity {
 
     @Override
     public String toString() {
-        return "Food{" +
-                "foodNo='" + foodNo + '\'' +
-                ", foodName='" + foodName + '\'' +
-                ", foodStatus='" + foodStatus + '\'' +
-                ", price=" + price +
-                ", type='" + type + '\'' +
-                ", shopNo='" + shopNo + '\'' +
-                '}';
+        return
+                " foodName='" + foodName ;
     }
 }
