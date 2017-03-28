@@ -1,23 +1,29 @@
 package wang.sunce;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import wang.sunce.dao.FoodDao;
-import wang.sunce.entity.Food;
-
-import java.util.List;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.web.context.WebApplicationContext;
 
 /**
  * Created by Sunce on 2017/3/19 0019.
  */
 @SpringBootApplication
-public class Application {
+public class Application extends SpringBootServletInitializer{
 
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(Application.class);
+    }
 
+    @Override
+    protected WebApplicationContext run(SpringApplication application) {
+        return run(application);
+    }
 
     public static  void  main(String[] args){
-        SpringApplication.run(Application.class);
+        SpringApplication.run(Application.class,args);
     }
 
 }
