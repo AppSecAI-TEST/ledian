@@ -17,11 +17,6 @@ public class Application extends SpringBootServletInitializer{
         return builder.sources(Application.class);
     }
 
-    @Override
-    protected WebApplicationContext run(SpringApplication application) {
-        return run(application);
-    }
-
     public static  void  main(String[] args){
         SpringApplication.run(Application.class,args);
     }
