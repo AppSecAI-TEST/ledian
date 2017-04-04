@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 import wang.sunce.dao.FoodDao;
 import wang.sunce.entity.Food;
 
+import java.util.List;
+
 /**
  * Created by Sunce on 2017/3/22 0022.
  */
@@ -22,6 +24,10 @@ public class FoodService {
     public Food update(Food food){
         foodDao.save(food);
         return food;
+    }
+
+    public List<Food> findAll(){
+        return foodDao.findAll();
     }
 
     public void delete(Food food){

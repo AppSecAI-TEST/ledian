@@ -1,31 +1,30 @@
 package wang.sunce.config;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
-
+import java.sql.SQLException;
 /**
- * Created by Sunce on 2017/3/20 0020.
+ * Created by Sunce on 2017/4/4 0004.
  */
+
 @Configuration
-@EnableTransactionManagement
-@EnableJpaRepositories(basePackages= { "wang.sunce.dao" })//设置dao（repo）所在位置
-public class DataSourceConfig{
+public class DataSourceConfig {
 
-
-    @Bean(name = "primaryDS")
-    @Qualifier("primaryDS")
-    @Primary
-    @ConfigurationProperties(prefix="spring.datasource")
-    public DataSource primaryDataSource(){
-            return DataSourceBuilder.create().build();
+    @Bean
+    public DataSource druidDataSource() throws SQLException {
+        DruidDataSource druidDataSource = new DruidDataSource();
+        druidDataSource.setUsername("root");
+//        druidDataSource.setPassword("root");
+        druidDataSource.setPassword("cece1028");
+        druidDataSource.setUrl("jdbc:mysql://localhost:3306/ledian");
+        druidDataSource.setMaxActive(100);
+        druidDataSource.setFilters("stat,wall");
+        druidDataSource.setInitialSize(10);
+        return druidDataSource;
     }
+
 
 }
