@@ -1,6 +1,7 @@
 package wang.sunce.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,13 +14,21 @@ import java.sql.SQLException;
 @Configuration
 public class DataSourceConfig {
 
+    @Value("${spring.datasource.username}")
+    private String username;
+
+    @Value("${spring.datasource.password}")
+    private String password;
+
+    @Value("${spring.datasource.url}")
+    private String url;
+
     @Bean
     public DataSource druidDataSource() throws SQLException {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUsername("root");
-//        druidDataSource.setPassword("root");
-        druidDataSource.setPassword("cece1028");
-        druidDataSource.setUrl("jdbc:mysql://localhost:3306/ledian");
+        druidDataSource.setUsername(username);
+        druidDataSource.setPassword(password);
+        druidDataSource.setUrl(url);
         druidDataSource.setMaxActive(100);
         druidDataSource.setFilters("stat,wall");
         druidDataSource.setInitialSize(10);

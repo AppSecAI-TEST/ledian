@@ -3,8 +3,8 @@ package wang.sunce.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import wang.sunce.dao.FoodDao;
 import wang.sunce.entity.Food;
+import wang.sunce.service.FoodService;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -16,11 +16,11 @@ import java.util.List;
 public class FoodController {
 
     @Resource
-    private FoodDao foodDao;
+    private FoodService foodService;
 
     @RequestMapping("/test")
     public @ResponseBody String find(){
-    List<Food> foods=foodDao.findAll();
+    List<Food> foods=foodService.findAll();
         System.out.print(foods);
         return  foods.toString();
     }
@@ -30,7 +30,7 @@ public class FoodController {
 //        Food food=new Food();
 //        food.setName(foodName);
 //        foodDao.save(food);
-        List<Food> foods=foodDao.findAll();
+        List<Food> foods=foodService.findAll();
         System.out.print(foods);
         return  foods.toString();
     }
