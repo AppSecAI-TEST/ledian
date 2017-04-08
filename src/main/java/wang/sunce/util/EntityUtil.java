@@ -61,12 +61,11 @@ public class EntityUtil {
         }else{
             className = upperStr(tableName);
         }
-        System.out.println("public class "+className+" extends BaseEntity<Long>{");
+        System.out.println("public class "+className+" extends BaseEntity{");
         System.out.println();
-        System.out.println("private static final long serialVersionUID = 1232427668166267147L;");
+//        System.out.println("private static final long serialVersionUID = 1232427668166267147L;");
         List<Field> list = DataSourceUtil.getInstacne().getTableColumnDetail(tableName);
-        if(list!=null && !list.isEmpty()){
-            for(Field f:list){
+        if(list!=null && !list.isEmpty()){for(Field f:list){
                 if("id".equalsIgnoreCase(f.getColumnName())){
                     continue;
                 }
