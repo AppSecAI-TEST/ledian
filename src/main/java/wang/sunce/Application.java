@@ -10,6 +10,8 @@ import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +21,7 @@ import java.util.Map;
  */
 @SpringBootApplication
 @EnableScheduling
+//@EnableWebMvc
 public class Application extends SpringBootServletInitializer{
 
     @Override
@@ -53,6 +56,14 @@ public class Application extends SpringBootServletInitializer{
         filterRegistrationBean.setInitParameters(initParams);
         filterRegistrationBean.addUrlPatterns("/*");
         return filterRegistrationBean;
+    }
+
+    @Bean
+    public CharacterEncodingFilter initCharacterEncodingFilter(){
+        CharacterEncodingFilter filter=new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        filter.setForceEncoding(true);
+        return filter;
     }
 
 
