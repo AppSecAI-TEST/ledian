@@ -31,7 +31,7 @@ public class RegistController {
     @RequestMapping("/phone")
     public ModelAndView phone(){
         ModelAndView model=new ModelAndView();
-        model.setViewName("/regist/regist");
+        model.setViewName("/regist/regist2");
         return model;
     }
 
