@@ -42,12 +42,13 @@
 
     </form>
     </div>
+    <!-----start-copyright---->
+    <div class="copy-right">
+        <p>乐点科技有限公司</p>
+    </div>
+    <!-----//end-copyright---->
+
 </div>
-<!-----start-copyright---->
-<div class="copy-right">
-    <p>乐点科技有限公司</p>
-</div>
-<!-----//end-copyright---->
 
 
 </body>

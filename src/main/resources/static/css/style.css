@@ -28,7 +28,8 @@ body{
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .main{
-    margin:7em auto 0;
+    /*margin:7em auto 0;*/
+    vertical-align: middle;
     width:80%;
     background: #fff;
 }
@@ -386,7 +387,7 @@ input[type=checkbox].css-checkbox10:checked + label i.css-label10 {
 @media only screen and (max-width:480px) and (min-width:320px) {
     .main{
         width:95%;
-        margin:2em auto 0;
+        margin:4em auto 0;
     }
     .main p{
         padding:16px 20px;
