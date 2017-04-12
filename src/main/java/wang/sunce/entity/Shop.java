@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "shop")
 public class Shop extends BaseEntity{
 
-    /** 操作员类型 */
+    /** 店铺类型 */
     private String type;
 
     /** 店铺号 */

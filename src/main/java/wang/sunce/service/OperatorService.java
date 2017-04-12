@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
+import wang.sunce.constant.ShopConstant;
 import wang.sunce.constant.StatusConstant;
 import wang.sunce.dao.OperatorDao;
 import wang.sunce.entity.Operator;
@@ -34,6 +35,7 @@ public class OperatorService {
         operator.setPublicPassword(password);
         operator.setStatus(StatusConstant.INIT_STATUS);
         operator.setCreateTime(new Date());
+        operator.setType(ShopConstant.OWNER);
         operatorDao.save(operator);
     }
 
