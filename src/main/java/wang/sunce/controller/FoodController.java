@@ -1,6 +1,5 @@
 package wang.sunce.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.gson.JsonObject;
 import io.goeasy.GoEasy;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,27 +17,31 @@ import java.util.List;
 @RestController
 public class FoodController {
 
+
     @Resource
     private FoodService foodService;
 
     @RequestMapping("/test")
-    public @ResponseBody String find(){
-    List<Food> foods=foodService.findAll();
+    @ResponseBody
+    String find() {
+        List<Food> foods = foodService.findAll();
         System.out.print(foods);
-        JsonObject result=new JsonObject();
-        result.addProperty("FOOD",foods.toString());
+        JsonObject result = new JsonObject();
+        result.addProperty("FOOD", foods.toString());
         GoEasy goEasy = new GoEasy("a7c60e16-d2bf-4aed-815d-8e1580a8ca74");
         goEasy.publish("abcde", result.toString());
-        return  foods.toString();
+        return foods.toString();
     }
 
     @RequestMapping("/save")
-    public @ResponseBody String save(String foodName){
+    public
+    @ResponseBody
+    String save(String foodName) {
 //        Food food=new Food();
 //        food.setName(foodName);
 //        foodDao.save(food);
-        List<Food> foods=foodService.findAll();
+        List<Food> foods = foodService.findAll();
         System.out.print(foods);
-        return  foods.toString();
+        return foods.toString();
     }
 }
